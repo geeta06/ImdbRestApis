@@ -1,7 +1,7 @@
 Introduction 
--
+
 This is imdb project used to search movies and get details about the movies. It contains backend RestApis in flask using sqlite database.
--
+
 
 Authenticated CRUD Apis for admin
 
@@ -13,18 +13,21 @@ http://flask-imdb-apis.herokuapp.com/api/v1/update/movie
 
 http://flask-imdb-apis.herokuapp.com/api/v1/delete/movie
 
--
+
 Public Apis to get list of movies or to search any movie
 
 http://flask-imdb-apis.herokuapp.com/api/v1/movies
 
 http://flask-imdb-apis.herokuapp.com/api/v1/search/movie?name=Kong
 
--
+
+Login
+
 Login to below api Using the username and password provided
 A jwt token will be provied 
 
 Url
+
 http://flask-imdb-apis.herokuapp.com/login
 
 
@@ -35,7 +38,7 @@ Raw Json Body
 }
 
 
-return 
+return :
 Success Response
 Code : 200 - OK
 
@@ -51,8 +54,9 @@ Failure Response
 
 500 : Internal Server Error
 
-
 -
+Create Movie[POST]
+
 Authenticated add movie api for admin to use any new movie using below details
 
 Url
@@ -94,8 +98,7 @@ Code : 400 Bad Request
 
 500: Internal Server Error
 
--
-
+Update Movie[PUT]
 
 This Api is used by Admin to update any movie 
 
@@ -111,6 +114,7 @@ Headers
 
 
 Raw Json Body
+
 {
     "99popularity": 88.0,
     "director": "George Lucas",
@@ -136,12 +140,13 @@ Code : 400 Bad Request
 500: Internal Server Error
 
 
--
+Delete Movie[DELETE]
+
 This api is used by admin to delete any movie from the Database
 
 Url
-http://flask-imdb-apis.herokuapp.com/api/v1/delete/movie
 
+http://flask-imdb-apis.herokuapp.com/api/v1/delete/movie
 
 Headers
 {
@@ -151,7 +156,7 @@ Headers
 
 
 Raw Json Body
-	{  
+{  
     "movies_id": "NU8Y4DNMD"
 }
 
@@ -164,19 +169,16 @@ Response :
   }
 
 
--
+Get List of Movies[GET]
+
 Public Api to get all the movies from the database 
 
-
 Url
+
 http://flask-imdb-apis.herokuapp.com/api/v1/movies
 
-params
-
-offset=0
 
 return
-
 Success Response
 Code : 200
 Response :  
@@ -208,14 +210,19 @@ Response :
 ]
 return 500 Internal Server Error
 
--
-Public Api to search any movie from Database based its name, popularity, imdb_score, director name, genre
-to search by name
+Search Movie[GET]
+
+Public Api to search any movie from Database based its name, popularity, imdb_score, director name, genre.
+You can use Genre can be from the below list
+Eg. ADVENTURE, FAMILY, FANTASY, MUSICAL, ACTION, SCI-FI, DRAMA, WAR
+
+To search by name
 
 Url
 http://flask-imdb-apis.herokuapp.com/api/v1/search/movie?name=Kong
 
 return
+Success Response
 Code : 200
 Response :  
    	[
@@ -232,16 +239,16 @@ Response :
     "name": "King Kong"
   }
 ]
+Failure Response
 
 return 400 Bad request
 
-return 500 Internal sever error
-
+return 500 Internal Server Error
 
 similarly to search by imdb_score
+
 Url 
 http://flask-imdb-apis.herokuapp.com/api/v1/search/movie?imdb_score=9
-
 
 return 
 200-OK
@@ -275,4 +282,3 @@ return
 500-Internal Server Error
 
 
-likewise for other search
