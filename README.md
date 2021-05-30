@@ -1,7 +1,8 @@
 Introduction 
 -
-This is imdb like project used to search movies and get details about the movies. It contains backend RestApis in flask using sqlite database.
+This is imdb project used to search movies and get details about the movies. It contains backend RestApis in flask using sqlite database.
 -
+
 Authenticated CRUD Apis for admin
 
 http://flask-imdb-apis.herokuapp.com/login
@@ -11,7 +12,6 @@ http://flask-imdb-apis.herokuapp.com/api/v1/add/movie
 http://flask-imdb-apis.herokuapp.com/api/v1/update/movie
 
 http://flask-imdb-apis.herokuapp.com/api/v1/delete/movie
-
 
 -
 Public Apis to get list of movies or to search any movie
