@@ -236,6 +236,7 @@ Response :
 ]
 
 return 400 Bad request
+
 return 500 Internal sever error
 
 
@@ -246,6 +247,7 @@ http://flask-imdb-apis.herokuapp.com/api/v1/search/movie?imdb_score=9
 
 return 
 200-OK
+
 [{
     "99popularity": 92.0,
     "director": "Francis Ford Coppola",
@@ -269,7 +271,9 @@ return
     "name": "Il buono, il brutto, il cattivo."
   }]
   
+
 400- Bad Request
+
 500-Internal Server Error
 
 
