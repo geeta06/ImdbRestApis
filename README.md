@@ -1,8 +1,8 @@
 Introduction 
 -
 This is imdb like project used to search movies and get details about the movies. It contains backend RestApis in flask using sqlite database.
-
 -
+
 Authenticated CRUD Apis for admin
 
 http://flask-imdb-apis.herokuapp.com/login
@@ -40,13 +40,16 @@ Raw Json Body
 return 
 Success Response
 Code : 200 - OK
+
 Response :  
 
 {    "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImZ5bmQiLCJleHAiOjE2MjIzNTkxMjF9.lgOEcmTp5328UsAjo1csZmwB5JSvB2hCQZYKkteLzJM"
   }
 return 
 Failure Response 
+
 400 : Bad Request
+
 500 : Internal Server Error
 
 
@@ -87,13 +90,15 @@ Response :
   }
   
 Failure Response
+
 Code : 400 Bad Request
+
 500: Internal Server Error
 
 -
 
-This Api is used by Admin to update any movie 
 
+This Api is used by Admin to update any movie 
 
 Url
 http://flask-imdb-apis.herokuapp.com/api/v1/update/movie
