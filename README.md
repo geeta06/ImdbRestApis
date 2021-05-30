@@ -2,7 +2,6 @@ Introduction
 -
 This is imdb like project used to search movies and get details about the movies. It contains backend RestApis in flask using sqlite database.
 -
-
 Authenticated CRUD Apis for admin
 
 http://flask-imdb-apis.herokuapp.com/login
@@ -29,7 +28,6 @@ Url
 http://flask-imdb-apis.herokuapp.com/login
 
 
-
 Raw Json Body
 {
 	"username": "admin",
@@ -45,6 +43,7 @@ Response :
 
 {    "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImZ5bmQiLCJleHAiOjE2MjIzNTkxMjF9.lgOEcmTp5328UsAjo1csZmwB5JSvB2hCQZYKkteLzJM"
   }
+  
 return 
 Failure Response 
 
@@ -207,10 +206,9 @@ Response :
       "name": "Psycho"
     },
 ]
-
 return 500 Internal Server Error
--
 
+-
 Public Api to search any movie from Database based its name, popularity, imdb_score, director name, genre
 to search by name
 
