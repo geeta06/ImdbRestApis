@@ -1,17 +1,17 @@
-# ImdbRestApis
-Authenticated IMDB RestApis in Flask
+Authenticated RestApis in Flask
+
 Login api for admin the user is created use the username and password provided over mail.
 
-HOST
+Host
   	127.0.0.1:5000
 
-URL 
- 	{{HOST}}/login
+Url
+ 	{{Host}}/login
 
-METHOD
+Method
 POST
 
-Raw Json body
+Raw Json Body
 	{
 	"username": "admin",
 	“password": "admin"
@@ -27,17 +27,10 @@ Response :
 Failure Response
 Code : 400
 Response:
-{Bad Request}
+Bad Request
 
 
 Error  Response
-
 Code : 500
 Response:
-{Internal Server Error}
-
-
-
-
-
- 
+Internal Server Error
