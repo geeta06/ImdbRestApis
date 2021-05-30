@@ -10,6 +10,7 @@ Flask-Migrate==3.0.0
 Flask-SQLAlchemy==2.5.1
 Flask-Testing==0.8.1
 greenlet==1.1.0
+gunicorn==20.1.0
 idna==2.10
 importlib-metadata==4.0.1
 ipython==7.24.0
