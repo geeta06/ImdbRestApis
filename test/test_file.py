@@ -4,7 +4,9 @@ import unittest
 import requests
 import copy
 
-HOST = "http://localhost:5000"
+# HOST = "http://localhost:5000"
+HOST = "http://flask-imdb-apis.herokuapp.com"
+
 
 class TestMovies(unittest.TestCase):
 

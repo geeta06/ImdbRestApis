@@ -36,7 +36,6 @@ def get_movies():
     """
     GET api used by any users who wants to get list of movies
     :return JsonResponse
-    [
     [{
       "99popularity": 83.0,
       "director": "Victor Fleming",
@@ -60,14 +59,14 @@ def get_movies():
       ],
       "imdb_score": 8.8,
       "name": "Star Wars"
-        }],
-    200
-    ] - OK
+        }
+    ] 200 - OK
     500 - InternalServerError
     """
     try:
         offset = int(request.args.get('offset', 0))
-        response = MovieOperation.get_movies_list(offset, limit)
+        max_limit = offset + limit
+        response = MovieOperation.get_movies_list(offset, max_limit)
         return make_response(jsonify(response), StatusCode._200)
 
     except Exception as e:
@@ -93,10 +92,11 @@ def search_movie():
         imdb_score = float(data.get('imdb_score', 0.0))
         director = data.get('director', '')
         genre = data.get('genre', '')
+        max_limit = offset + limit
         movies = MovieOperation.get_search_result(
             name, director,
             imdb_score, popularity,
-            genre, limit, offset)
+            genre, max_limit, offset)
         if movies == []:
             return make_response(jsonify("No movie found"), StatusCode._400)
         response = [movie.serialize for movie in movies]
@@ -107,7 +107,7 @@ def search_movie():
 
 
 @main.route('/api/v1/add/movie', methods=["POST"])
-# @admin_jwt_token_required
+@admin_jwt_token_required
 def add_movie():
     """
     POST api used by admin to add new movies in db
@@ -127,9 +127,9 @@ def add_movie():
         "name": "Cabiria"
     }
     :return: JsonResponse
-    {[{'message': "Movie Added Successfully." }, 200 ]}- OK
-    {[{'message': response }, 400 ]}- Bad request
-    {[{'message': response }, 500 ]}- Internal Server Error
+    {'message': "Movie Added Successfully." }  200 - OK
+    {'message': response } 400 - Bad request
+    {'message': response }, 500 ]- Internal Server Error
     """
     try:
         data = request.get_json()
